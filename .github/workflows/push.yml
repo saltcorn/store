@@ -1,0 +1,22 @@
+name: Saltcorn Marketplace Push
+run-name: ${{ github.actor }} is merged ${{ github.ref }} and pushed to Saltcorn Store 🚀
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  Saltcorn-Push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Push to Store
+        run: |
+          for f in extensions/*.json ; do
+            curl --fail-with-body -sSXPOST -H "Authorization: Bearer ${SALTCORN_TOKEN}" -H 'Content-Type: application/json' --data "@$f" "${SALTCORN_URL:-http://store.saltcorn.com}/api/action/update_ext"
+          done
+          for f in packs/*.json ; do
+            curl --fail-with-body -sSXPOST -H "Authorization: Bearer ${SALTCORN_TOKEN}" -H 'Content-Type: application/json' --data "@$f" "${SALTCORN_URL:-http://store.saltcorn.com}/api/action/update_pack"
+          done
+        env:
+          SALTCORN_TOKEN: '${{ secrets.SALTCORN_TOKEN }}'
+          SALTCORN_URL: '${{ vars.SALTCORN_URL }}'

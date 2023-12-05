@@ -1,0 +1,1 @@
+{"description":"Generate PDF files from pages","documentation_link":null,"has_auth":false,"has_theme":false,"location":"@saltcorn/page-to-pdf","name":"page-to-pdf","source":"npm","unsafe":false}

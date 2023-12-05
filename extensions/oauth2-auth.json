@@ -1,0 +1,1 @@
+{"description":"Authentication with any OAuth 2.0 provider","documentation_link":"","has_auth":true,"has_theme":false,"location":"@saltcorn/oauth2-auth","name":"oauth2-auth","source":"npm","unsafe":false}

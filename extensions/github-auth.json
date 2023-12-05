@@ -1,0 +1,1 @@
+{"description":"Authentication with GitHub","documentation_link":"","has_auth":true,"has_theme":false,"location":"@saltcorn/github-auth","name":"github-auth","source":"npm","unsafe":false}

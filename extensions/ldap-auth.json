@@ -1,0 +1,1 @@
+{"description":"Authentication with LDAP/Active Directory","documentation_link":"","has_auth":true,"has_theme":false,"location":"@saltcorn/ldap-auth","name":"ldap-auth","source":"npm","unsafe":false}

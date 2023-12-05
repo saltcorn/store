@@ -1,0 +1,1 @@
+{"description":"System information: cpu/ram/disk usage","documentation_link":"https://github.com/saltcorn/system-info/blob/main/README.md","has_auth":false,"has_theme":false,"location":"@saltcorn/system-info","name":"system-info","source":"npm","unsafe":false}

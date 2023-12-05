@@ -1,0 +1,1 @@
+{"description":"Authentication with Google accounts","documentation_link":"","has_auth":true,"has_theme":false,"location":"@saltcorn/google-auth","name":"google-auth","source":"npm","unsafe":false}

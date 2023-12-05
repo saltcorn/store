@@ -1,0 +1,1 @@
+{"description":"Authentication with SAML","documentation_link":"https://github.com/saltcorn/saml-auth/blob/main/README.md","has_auth":true,"has_theme":false,"location":"@saltcorn/saml-auth","name":"saml-auth","source":"npm","unsafe":false}

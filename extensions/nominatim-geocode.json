@@ -1,0 +1,1 @@
+{"description":"Geocoding with Nominatim from OpenStreetMap","documentation_link":"https://github.com/saltcorn/nominatim-geocode/blob/main/README.md","has_auth":false,"has_theme":false,"location":"@saltcorn/nominatim-geocode","name":"nominatim-geocode","source":"npm","unsafe":false}

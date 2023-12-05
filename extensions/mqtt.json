@@ -1,0 +1,1 @@
+{"description":"MQTT event source and publish to MQTT broker","documentation_link":null,"has_auth":false,"has_theme":false,"location":"@saltcorn/mqtt","name":"mqtt","source":"npm","unsafe":false}

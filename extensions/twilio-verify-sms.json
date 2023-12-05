@@ -1,0 +1,1 @@
+{"description":"Verify user accounts using SMS with Twilio API","documentation_link":null,"has_auth":false,"has_theme":false,"location":"@saltcorn/twilio-verify-sms","name":"twilio-verify-sms","source":"npm","unsafe":false}

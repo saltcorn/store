@@ -1,0 +1,28 @@
+name: Saltcorn Marketplace Pull
+run-name: ${{ github.actor }} is refreshing branch ${{ github.ref }} from Saltcorn Store 🚀
+on: [workflow_dispatch]
+jobs:
+  Saltcorn-Pull-Commit-Git-Push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Fetch from Store
+        run: |
+          mkdir -p .temp
+          curl --fail-with-body -o .temp/extensions.json https://store.saltcorn.com/api/extensions
+          curl --fail-with-body -o .temp/packs.json https://store.saltcorn.com/api/packs
+          /bin/jq -nr '[inputs|{dir:(input_filename|capture("^(.*/)?(?<fn>[^/]*)\\.json$").fn),content:.success}][]|
+                      .dir as $dir|
+                      "mkdir -p \($dir)",
+                      (.content[]|del(.id,.downloads)|
+                       "echo \(.|@json|@sh) > \u0022\($dir)/\(.name|gsub("[^a-zA-Z0-9]";"-")).json\u0022"
+                      )' .temp/extensions.json .temp/packs.json > .temp/gen.sh
+          . .temp/gen.sh
+      - name: Git commit and push
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add -A
+          git commit -m "downloaded"
+          git push
